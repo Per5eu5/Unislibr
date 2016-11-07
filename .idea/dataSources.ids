@@ -1,0 +1,940 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - library@localhost" uuid="a4c88730-e2ce-42cf-b257-3104bf9ca50c">
+    <database-info product="MySQL" version="5.6.26" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="library"/>
+      <table id="2" parent="1" name="added_author"/>
+      <table id="3" parent="1" name="authors"/>
+      <table id="4" parent="1" name="city"/>
+      <table id="5" parent="1" name="copy"/>
+      <table id="6" parent="1" name="genre"/>
+      <table id="7" parent="1" name="groups"/>
+      <table id="8" parent="1" name="institute"/>
+      <table id="9" parent="1" name="keyword"/>
+      <table id="10" parent="1" name="librarians"/>
+      <table id="11" parent="1" name="lost"/>
+      <table id="12" parent="1" name="print"/>
+      <table id="13" parent="1" name="printauthor"/>
+      <table id="14" parent="1" name="printgenre"/>
+      <table id="15" parent="1" name="printkeyword"/>
+      <table id="16" parent="1" name="publishing_house"/>
+      <table id="17" parent="1" name="reader"/>
+      <table id="18" parent="1" name="repository"/>
+      <table id="19" parent="1" name="section"/>
+      <table id="20" parent="1" name="state"/>
+      <table id="21" parent="1" name="subs_audit"/>
+      <table id="22" parent="1" name="subscription"/>
+      <table id="23" parent="1" name="type_of_publication"/>
+      <table id="24" parent="1" name="type_of_publication2"/>
+      <table id="25" parent="1" name="guest_book"/>
+      <view id="26" parent="1" name="concat_city_house"/>
+      <view id="27" parent="1" name="concat_types"/>
+      <view id="28" parent="1" name="groups_and_institutes"/>
+      <view id="29" parent="1" name="print_publ_type"/>
+      <view id="30" parent="1" name="print_view"/>
+      <view id="31" parent="1" name="reader_groups_and_institutes"/>
+      <view id="32" parent="1" name="subscription_reader_groups_and_institutes"/>
+      <view id="33" parent="1" name="subscription_view"/>
+      <view id="34" parent="1" name="copy_view"/>
+      <routine id="35" parent="1" name="count_readers">
+        <routine-kind>FUNCTION</routine-kind>
+      </routine>
+      <routine id="36" parent="1" name="func_plus_proc">
+        <routine-kind>FUNCTION</routine-kind>
+      </routine>
+      <routine id="37" parent="1" name="proc_plus_func">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="38" parent="1" name="some_tables">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="39" parent="1" name="three_fields">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="40" parent="1" name="two_fields">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="41" parent="1" name="authorization_librarian">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="42" parent="1" name="authorization_reader">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="43" parent="1" name="registration">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <routine id="44" parent="1" name="registration_librarian">
+        <routine-kind>PROCEDURE</routine-kind>
+      </routine>
+      <column id="45" parent="2" name="ID_print">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="46" parent="2" name="Added_author">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="47" parent="2" name="User">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="48" parent="3" name="IDauthor">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="49" parent="3" name="Author">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="50" parent="3" name="UK_authors_IDauthor">
+        <columns>IDauthor</columns>
+        <unique>1</unique>
+      </index>
+      <key id="51" parent="3" name="PRIMARY">
+        <columns>IDauthor</columns>
+        <primary>1</primary>
+      </key>
+      <key id="52" parent="3" name="UK_authors_IDauthor">
+        <columns>IDauthor</columns>
+        <underlying-index>UK_authors_IDauthor</underlying-index>
+      </key>
+      <column id="53" parent="4" name="IDcity">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="54" parent="4" name="City">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="55" parent="4" name="UK_city_IDcity">
+        <columns>IDcity</columns>
+        <unique>1</unique>
+      </index>
+      <key id="56" parent="4" name="PRIMARY">
+        <columns>IDcity</columns>
+        <primary>1</primary>
+      </key>
+      <key id="57" parent="4" name="UK_city_IDcity">
+        <columns>IDcity</columns>
+        <underlying-index>UK_city_IDcity</underlying-index>
+      </key>
+      <column id="58" parent="5" name="IDcopy">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="59" parent="5" name="IDprint">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="60" parent="5" name="IDstate">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="61" parent="5" name="IDrepositoty">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="62" parent="5" name="IDsection">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="63" parent="5" name="Quantity">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="64" parent="5" name="Cost">
+        <mandatory>1</mandatory>
+        <data-type>decimal(19,2)</data-type>
+        <default-expression>&apos;1.00&apos;</default-expression>
+      </column>
+      <index id="65" parent="5" name="UK_copy_IDcopy">
+        <columns>IDcopy</columns>
+        <unique>1</unique>
+      </index>
+      <key id="66" parent="5" name="PRIMARY">
+        <columns>IDcopy</columns>
+        <primary>1</primary>
+      </key>
+      <key id="67" parent="5" name="UK_copy_IDcopy">
+        <columns>IDcopy</columns>
+        <underlying-index>UK_copy_IDcopy</underlying-index>
+      </key>
+      <foreign-key id="68" parent="5" name="FK_copy_print_IDprint">
+        <columns>IDprint</columns>
+        <ref-key>print.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="69" parent="5" name="FK_copy_repository_IDrepository">
+        <columns>IDrepositoty</columns>
+        <ref-key>repository.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="70" parent="5" name="FK_copy_section_IDsection">
+        <columns>IDsection</columns>
+        <ref-key>section.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="71" parent="5" name="FK_copy_state_IDstate">
+        <columns>IDstate</columns>
+        <ref-key>state.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="72" parent="6" name="IDgenre">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="73" parent="6" name="Genre">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="74" parent="6" name="UK_genre_IDgenre">
+        <columns>IDgenre</columns>
+        <unique>1</unique>
+      </index>
+      <key id="75" parent="6" name="PRIMARY">
+        <columns>IDgenre</columns>
+        <primary>1</primary>
+      </key>
+      <key id="76" parent="6" name="UK_genre_IDgenre">
+        <columns>IDgenre</columns>
+        <underlying-index>UK_genre_IDgenre</underlying-index>
+      </key>
+      <column id="77" parent="7" name="IDgroups">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="78" parent="7" name="IDinstitute">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="79" parent="7" name="Groups">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="80" parent="7" name="UK_groups_IDgroups">
+        <columns>IDgroups</columns>
+        <unique>1</unique>
+      </index>
+      <key id="81" parent="7" name="PRIMARY">
+        <columns>IDgroups</columns>
+        <primary>1</primary>
+      </key>
+      <key id="82" parent="7" name="UK_groups_IDgroups">
+        <columns>IDgroups</columns>
+        <underlying-index>UK_groups_IDgroups</underlying-index>
+      </key>
+      <foreign-key id="83" parent="7" name="FK_groups_institute_IDinstitute">
+        <columns>IDinstitute</columns>
+        <ref-key>institute.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="84" parent="8" name="IDinstitute">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="85" parent="8" name="Institute">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="86" parent="8" name="UK_Institute_IDinstitute">
+        <columns>IDinstitute</columns>
+        <unique>1</unique>
+      </index>
+      <key id="87" parent="8" name="PRIMARY">
+        <columns>IDinstitute</columns>
+        <primary>1</primary>
+      </key>
+      <key id="88" parent="8" name="UK_Institute_IDinstitute">
+        <columns>IDinstitute</columns>
+        <underlying-index>UK_Institute_IDinstitute</underlying-index>
+      </key>
+      <column id="89" parent="9" name="IDkeyword">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="9" name="Keyword">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="91" parent="9" name="UK_keyword_IDkeyword">
+        <columns>IDkeyword</columns>
+        <unique>1</unique>
+      </index>
+      <key id="92" parent="9" name="PRIMARY">
+        <columns>IDkeyword</columns>
+        <primary>1</primary>
+      </key>
+      <key id="93" parent="9" name="UK_keyword_IDkeyword">
+        <columns>IDkeyword</columns>
+        <underlying-index>UK_keyword_IDkeyword</underlying-index>
+      </key>
+      <column id="94" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="95" parent="10" name="login">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="96" parent="10" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="97" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="98" parent="11" name="IDlost">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="99" parent="11" name="IDsubsctiption">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="100" parent="11" name="IDcopy">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="101" parent="11" name="Paid">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;0.00&apos;</default-expression>
+      </column>
+      <column id="102" parent="11" name="Lost">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="103" parent="11" name="UK_lost_IDlost">
+        <columns>IDlost</columns>
+        <unique>1</unique>
+      </index>
+      <key id="104" parent="11" name="PRIMARY">
+        <columns>IDlost</columns>
+        <primary>1</primary>
+      </key>
+      <key id="105" parent="11" name="UK_lost_IDlost">
+        <columns>IDlost</columns>
+        <underlying-index>UK_lost_IDlost</underlying-index>
+      </key>
+      <foreign-key id="106" parent="11" name="FK_lost_subscription_IDsubscription">
+        <columns>IDsubsctiption</columns>
+        <ref-key>subscription.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="107" parent="12" name="IDprint">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="108" parent="12" name="Title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="109" parent="12" name="IDtype_of_publication">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="110" parent="12" name="IDtype_of_publication2">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="111" parent="12" name="IDpublishing_house">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="112" parent="12" name="IDcity">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="113" parent="12" name="Year">
+        <data-type>year(4)</data-type>
+      </column>
+      <column id="114" parent="12" name="Cover">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="115" parent="12" name="UK_print_IDprint">
+        <columns>IDprint</columns>
+        <unique>1</unique>
+      </index>
+      <key id="116" parent="12" name="PRIMARY">
+        <columns>IDprint</columns>
+        <primary>1</primary>
+      </key>
+      <key id="117" parent="12" name="UK_print_IDprint">
+        <columns>IDprint</columns>
+        <underlying-index>UK_print_IDprint</underlying-index>
+      </key>
+      <foreign-key id="118" parent="12" name="FK_print_city_IDcity">
+        <columns>IDcity</columns>
+        <ref-key>city.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="119" parent="12" name="FK_print_publishing_house_IDpublishing_house">
+        <columns>IDpublishing_house</columns>
+        <ref-key>publishing_house.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="120" parent="12" name="FK_print_type_of_publication2_IDtype_of_publication2">
+        <columns>IDtype_of_publication2</columns>
+        <ref-key>type_of_publication2.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="121" parent="12" name="FK_print_type_of_publication_IDtype_of_publication">
+        <columns>IDtype_of_publication</columns>
+        <ref-key>type_of_publication.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="122" parent="13" name="IDprintauthor">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="123" parent="13" name="IDprint">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="124" parent="13" name="IDauthor">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="125" parent="13" name="UK_printauthor_IDprintauthor">
+        <columns>IDprintauthor</columns>
+        <unique>1</unique>
+      </index>
+      <key id="126" parent="13" name="PRIMARY">
+        <columns>IDprintauthor</columns>
+        <primary>1</primary>
+      </key>
+      <key id="127" parent="13" name="UK_printauthor_IDprintauthor">
+        <columns>IDprintauthor</columns>
+        <underlying-index>UK_printauthor_IDprintauthor</underlying-index>
+      </key>
+      <foreign-key id="128" parent="13" name="FK_printauthor_authors_IDauthor">
+        <columns>IDauthor</columns>
+        <ref-key>authors.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="129" parent="13" name="FK_printauthor_print_IDprint">
+        <columns>IDprint</columns>
+        <ref-key>print.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="130" parent="14" name="IDprintgenre">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="131" parent="14" name="IDprint">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="132" parent="14" name="IDgenre">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="133" parent="14" name="UK_bookgenre_IDprintgenre">
+        <columns>IDprintgenre</columns>
+        <unique>1</unique>
+      </index>
+      <key id="134" parent="14" name="PRIMARY">
+        <columns>IDprintgenre</columns>
+        <primary>1</primary>
+      </key>
+      <key id="135" parent="14" name="UK_bookgenre_IDprintgenre">
+        <columns>IDprintgenre</columns>
+        <underlying-index>UK_bookgenre_IDprintgenre</underlying-index>
+      </key>
+      <foreign-key id="136" parent="14" name="FK_printgenre_genre_IDgenre">
+        <columns>IDgenre</columns>
+        <ref-key>genre.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="137" parent="14" name="FK_printgenre_print_IDprint">
+        <columns>IDprint</columns>
+        <ref-key>print.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="138" parent="15" name="IDprintkeyword">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="139" parent="15" name="IDprint">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="140" parent="15" name="IDkeyword">
+        <data-type>int(11)</data-type>
+      </column>
+      <index id="141" parent="15" name="UK_printkeyword_IDprintkeyword">
+        <columns>IDprintkeyword</columns>
+        <unique>1</unique>
+      </index>
+      <key id="142" parent="15" name="PRIMARY">
+        <columns>IDprintkeyword</columns>
+        <primary>1</primary>
+      </key>
+      <key id="143" parent="15" name="UK_printkeyword_IDprintkeyword">
+        <columns>IDprintkeyword</columns>
+        <underlying-index>UK_printkeyword_IDprintkeyword</underlying-index>
+      </key>
+      <foreign-key id="144" parent="15" name="FK_printkeyword_keyword_IDkeyword">
+        <columns>IDkeyword</columns>
+        <ref-key>keyword.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="145" parent="15" name="FK_printkeyword_print_IDprint">
+        <columns>IDprint</columns>
+        <ref-key>print.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="146" parent="16" name="IDpublishing_house">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="147" parent="16" name="Publishing_house">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="148" parent="16" name="UK_publishing_house_IDpublishing_house">
+        <columns>IDpublishing_house</columns>
+        <unique>1</unique>
+      </index>
+      <key id="149" parent="16" name="PRIMARY">
+        <columns>IDpublishing_house</columns>
+        <primary>1</primary>
+      </key>
+      <key id="150" parent="16" name="UK_publishing_house_IDpublishing_house">
+        <columns>IDpublishing_house</columns>
+        <underlying-index>UK_publishing_house_IDpublishing_house</underlying-index>
+      </key>
+      <column id="151" parent="17" name="IDreader">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="152" parent="17" name="FIO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="153" parent="17" name="Date_of_birth">
+        <data-type>date</data-type>
+      </column>
+      <column id="154" parent="17" name="Number_of_student_card">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="155" parent="17" name="IDgroups">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="156" parent="17" name="Password">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="157" parent="17" name="Photo">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;no-photo.jpg&apos;</default-expression>
+      </column>
+      <index id="158" parent="17" name="UK_reader_IDreader">
+        <columns>IDreader</columns>
+        <unique>1</unique>
+      </index>
+      <key id="159" parent="17" name="PRIMARY">
+        <columns>IDreader</columns>
+        <primary>1</primary>
+      </key>
+      <key id="160" parent="17" name="UK_reader_IDreader">
+        <columns>IDreader</columns>
+        <underlying-index>UK_reader_IDreader</underlying-index>
+      </key>
+      <foreign-key id="161" parent="17" name="FK_reader_groups_IDgroups">
+        <columns>IDgroups</columns>
+        <ref-key>groups.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="162" parent="18" name="IDrepository">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="163" parent="18" name="Repository">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="164" parent="18" name="UK_repository_IDrepository">
+        <columns>IDrepository</columns>
+        <unique>1</unique>
+      </index>
+      <key id="165" parent="18" name="PRIMARY">
+        <columns>IDrepository</columns>
+        <primary>1</primary>
+      </key>
+      <key id="166" parent="18" name="UK_repository_IDrepository">
+        <columns>IDrepository</columns>
+        <underlying-index>UK_repository_IDrepository</underlying-index>
+      </key>
+      <column id="167" parent="19" name="IDsection">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="168" parent="19" name="Section">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="169" parent="19" name="UK_section_IDsection">
+        <columns>IDsection</columns>
+        <unique>1</unique>
+      </index>
+      <key id="170" parent="19" name="PRIMARY">
+        <columns>IDsection</columns>
+        <primary>1</primary>
+      </key>
+      <key id="171" parent="19" name="UK_section_IDsection">
+        <columns>IDsection</columns>
+        <underlying-index>UK_section_IDsection</underlying-index>
+      </key>
+      <column id="172" parent="20" name="IDstate">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="173" parent="20" name="State">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="174" parent="20" name="UK_state_IDstate">
+        <columns>IDstate</columns>
+        <unique>1</unique>
+      </index>
+      <key id="175" parent="20" name="PRIMARY">
+        <columns>IDstate</columns>
+        <primary>1</primary>
+      </key>
+      <key id="176" parent="20" name="UK_state_IDstate">
+        <columns>IDstate</columns>
+        <underlying-index>UK_state_IDstate</underlying-index>
+      </key>
+      <column id="177" parent="21" name="IDup_sub">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="178" parent="21" name="Old">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="179" parent="21" name="New">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="180" parent="21" name="User">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="181" parent="21" name="Time">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+      <key id="182" parent="21" name="PRIMARY">
+        <columns>IDup_sub</columns>
+        <primary>1</primary>
+      </key>
+      <column id="183" parent="22" name="IDsubscription">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="184" parent="22" name="IDreader">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="185" parent="22" name="IDcopy">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="186" parent="22" name="Date_of_issue">
+        <data-type>date</data-type>
+      </column>
+      <column id="187" parent="22" name="Expected_date_of_returnt">
+        <data-type>date</data-type>
+      </column>
+      <column id="188" parent="22" name="Actual_date_of_return">
+        <data-type>date</data-type>
+      </column>
+      <column id="189" parent="22" name="Lost">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="190" parent="22" name="Paid">
+        <mandatory>1</mandatory>
+        <data-type>decimal(10,2)</data-type>
+        <default-expression>&apos;1.00&apos;</default-expression>
+      </column>
+      <key id="191" parent="22" name="PRIMARY">
+        <columns>IDsubscription</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="192" parent="22" name="FK_subscription_copy_IDcopy">
+        <columns>IDcopy</columns>
+        <ref-key>copy.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="193" parent="22" name="FK_subscription_reader_IDreader">
+        <columns>IDreader</columns>
+        <ref-key>reader.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <trigger id="194" parent="22" name="trigger_subscription"/>
+      <column id="195" parent="23" name="IDtype_of_publication">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="196" parent="23" name="Type_of_publication">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="197" parent="23" name="UK_type_of_publication_IDtype_of_publication">
+        <columns>IDtype_of_publication</columns>
+        <unique>1</unique>
+      </index>
+      <key id="198" parent="23" name="PRIMARY">
+        <columns>IDtype_of_publication</columns>
+        <primary>1</primary>
+      </key>
+      <key id="199" parent="23" name="UK_type_of_publication_IDtype_of_publication">
+        <columns>IDtype_of_publication</columns>
+        <underlying-index>UK_type_of_publication_IDtype_of_publication</underlying-index>
+      </key>
+      <column id="200" parent="24" name="IDtype_of_publication2">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="201" parent="24" name="Type_of_publication2">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="202" parent="24" name="UK_type_of_publication2_IDtype_of_publication2">
+        <columns>IDtype_of_publication2</columns>
+        <unique>1</unique>
+      </index>
+      <key id="203" parent="24" name="PRIMARY">
+        <columns>IDtype_of_publication2</columns>
+        <primary>1</primary>
+      </key>
+      <key id="204" parent="24" name="UK_type_of_publication2_IDtype_of_publication2">
+        <columns>IDtype_of_publication2</columns>
+        <underlying-index>UK_type_of_publication2_IDtype_of_publication2</underlying-index>
+      </key>
+      <column id="205" parent="25" name="ID">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="206" parent="25" name="Date">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="207" parent="25" name="Name">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="208" parent="25" name="Email">
+        <data-type>varchar(50)</data-type>
+      </column>
+      <column id="209" parent="25" name="Message">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="210" parent="25" name="Public">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <key id="211" parent="25" name="PRIMARY">
+        <columns>ID</columns>
+        <primary>1</primary>
+      </key>
+      <column id="212" parent="26" name="Title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="213" parent="26" name="Name_exp_2">
+        <data-type>text</data-type>
+      </column>
+      <column id="214" parent="27" name="Title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="215" parent="27" name="Name_exp_2">
+        <data-type>text</data-type>
+      </column>
+      <column id="216" parent="28" name="Institute">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="217" parent="28" name="Groups">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="218" parent="29" name="Название">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="219" parent="29" name="Издательский дом">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="220" parent="29" name="Тип публикации">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="221" parent="30" name="Название">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="222" parent="30" name="Авторы">
+        <data-type>text</data-type>
+      </column>
+      <column id="223" parent="30" name="Жанры">
+        <data-type>text</data-type>
+      </column>
+      <column id="224" parent="30" name="Ключевые_слова">
+        <data-type>text</data-type>
+      </column>
+      <column id="225" parent="30" name="Тип_публикации">
+        <data-type>varchar(512)</data-type>
+      </column>
+      <column id="226" parent="30" name="Издательский_дом">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="227" parent="30" name="Город">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="228" parent="30" name="Год">
+        <data-type>year(4)</data-type>
+      </column>
+      <column id="229" parent="31" name="FIO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="230" parent="31" name="Institute">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="231" parent="31" name="Groups">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="232" parent="32" name="FIO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="233" parent="32" name="Title">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="234" parent="33" name="IDreader">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="235" parent="33" name="ФИО">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="236" parent="33" name="Название">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="237" parent="33" name="Дата_выдачи">
+        <data-type>date</data-type>
+      </column>
+      <column id="238" parent="33" name="Ожидаемая_дата_возврата">
+        <data-type>date</data-type>
+      </column>
+      <column id="239" parent="33" name="Дата_возврата">
+        <data-type>date</data-type>
+      </column>
+      <column id="240" parent="34" name="Название">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="241" parent="34" name="Авторы">
+        <data-type>text</data-type>
+      </column>
+      <column id="242" parent="34" name="Жанры">
+        <data-type>text</data-type>
+      </column>
+      <column id="243" parent="34" name="Ключевые_слова">
+        <data-type>text</data-type>
+      </column>
+      <column id="244" parent="34" name="Тип_публикации">
+        <data-type>varchar(512)</data-type>
+      </column>
+      <column id="245" parent="34" name="Издательский_дом">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="246" parent="34" name="Город">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="247" parent="34" name="Год">
+        <data-type>year(4)</data-type>
+      </column>
+      <column id="248" parent="34" name="Количество">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <argument id="249" parent="35">
+        <direction>RETURN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="250" parent="35" name="id_group">
+        <direction>IN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="251" parent="36">
+        <direction>RETURN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="252" parent="38" name="id_print">
+        <direction>IN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="253" parent="38" name="author">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="254" parent="39" name="title">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="255" parent="39" name="house">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="256" parent="39" name="type">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="257" parent="40" name="title">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="258" parent="40" name="year">
+        <direction>IN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="259" parent="41" name="login_php">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="260" parent="41" name="password_php">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="261" parent="42" name="login_php">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="262" parent="42" name="password_php">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="263" parent="43" name="php_fio">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="264" parent="43" name="php_date">
+        <direction>IN</direction>
+        <data-type>date</data-type>
+      </argument>
+      <argument id="265" parent="43" name="php_number">
+        <direction>IN</direction>
+        <data-type>int(11)</data-type>
+      </argument>
+      <argument id="266" parent="43" name="php_group">
+        <direction>IN</direction>
+        <data-type>int(3)</data-type>
+      </argument>
+      <argument id="267" parent="43" name="php_photo">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="268" parent="44" name="php_login">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+      <argument id="269" parent="44" name="php_password">
+        <direction>IN</direction>
+        <data-type>varchar(255)</data-type>
+      </argument>
+    </database-model>
+  </data-source>
+</component>
